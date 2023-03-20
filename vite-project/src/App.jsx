@@ -6,12 +6,15 @@ import './components/Counter.jsx'
 import Counter from './components/Counter.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [globalCount, setGlobalCount] = useState(0)
 
   return (
     <div className="App">
-        <Counter/>
-        <Counter/>
+        <Counter count={globalCount}/>
+        <Counter count={globalCount}/>
+        <button onClick={() => setGlobalCount(globalCount + 1)}>
+          click me
+        </button>
     </div>
   )
 }
